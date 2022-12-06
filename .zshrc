@@ -55,7 +55,7 @@ zstyle ':vcs_info:git:*' formats '%b'
 source ~/.alias
 
 # turn on vi mode
-bindkey -v
+#bindkey -v
 
 source /usr/share/fzf/key-bindings.zsh
 #source /usr/share/fzf/completion.zsh
