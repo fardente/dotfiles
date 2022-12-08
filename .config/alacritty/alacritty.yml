@@ -1,7 +1,7 @@
 window:
   padding:
-    x: 0
-    y: 0
+    x: 3
+    y: 3
   opacity: 0.96
 # Window decorations
 #
@@ -12,7 +12,7 @@ window:
 # Values for `decorations` (macOS only):
 #     - transparent: Title bar, transparent background and title bar buttons
 #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
+  decorations: none 
 scrolling:
   history: 10000
   multiplier: 4 
