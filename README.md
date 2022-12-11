@@ -5,6 +5,7 @@ Requirements for terminal stuff:
 - [fzf](https://github.com/junegunn/fzf) cli fuzzy finder
 - [alacritty](https://github.com/alacritty/alacritty) RGB Terminal
 - [tmux](https://github.com/tmux/tmux/wiki) terminal multiplexer
+- [astronvim](https://astronvim.github.io/) for use with user/init.lua
 
 ---
 Other stuff:
