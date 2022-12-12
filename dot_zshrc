@@ -59,20 +59,14 @@ RPROMPT=\$vcs_info_msg_0_
 # PROMPT=\$vcs_info_msg_0_'%# '
 zstyle ':vcs_info:git:*' formats '%b'
 
-export VISUAL=nvim
-export EDITOR=nvim
 
 source ~/.alias
 
 # turn on vi mode
 #bindkey -v
 
-#export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-export FZF_DEFAULT_COMMAND="fd . $HOME"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
