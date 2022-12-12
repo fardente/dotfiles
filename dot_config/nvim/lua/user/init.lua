@@ -1,8 +1,9 @@
 return {
+  colorscheme = "catppuccin",
   plugins = {
     init = { "catppuccin/nvim", "EdenEast/nightfox.nvim", "sainnhe/everforest", "Mofiqul/vscode.nvim",
-      "martinsione/darkplus.nvim", "folke/tokyonight.nvim" },
-    colorscheme = "catppuccin",
+      "martinsione/darkplus.nvim", "folke/tokyonight.nvim"
+    },
     cmp = function(opts)
       -- opts parameter is the default options table
       -- the function is lazy loaded so cmp is able to be required
