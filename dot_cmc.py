@@ -1,7 +1,9 @@
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-from key import key
 import json
+
+with open(".coinmarketapikey", "r") as f:
+  key = str(f.readline()).strip()
 
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
 parameters = {
