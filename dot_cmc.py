@@ -22,7 +22,7 @@ try:
   response = session.get(url, params=parameters)
   data = json.loads(response.text)
   price = int(data["data"]["1"]["quote"]["USD"]["price"])
-  with open("btcprice.txt", "w") as f:
+  with open(".btcprice.txt", "w") as f:
     f.write(str(price))
 except (ConnectionError, Timeout, TooManyRedirects) as e:
   print(e)
