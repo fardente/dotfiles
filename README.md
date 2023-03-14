@@ -15,7 +15,7 @@ Requirements for terminal stuff:
 Other stuff:
 - Capslock is mapped to ESC (press once) / CTRL (keep pressed)
 - [conky](https://github.com/brndnmtthws/conky) customisable system monitor
-- cmc.py needs API key for coinmarketcap, can be run as cron job to fetch BTC price to be shown in conky \
+- .cmc.py needs API key for coinmarketcap, can be run as cron job to fetch BTC price to be shown in conky \
   e.g. fetch BTC price every 5 mins using `crontab -e` : 
   
-  `*/5 * * * * /usr/bin/python /home/username/cmc.py` 
+  `*/5 * * * * /usr/bin/python /home/username/.cmc.py` 
