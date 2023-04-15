@@ -2,3 +2,4 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ds='dotfiles status'
 alias dl='cd ~/Downloads'
 alias cat='bat'
+source .alias_local
