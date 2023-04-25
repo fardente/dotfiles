@@ -1,7 +1,39 @@
 return {
 	plugins = {
+		{
+			"nvim-treesitter/nvim-treesitter",
+			opts = {
+				ensure_installed = {
+					"bash",
+					"css",
+					"dockerfile",
+					"go",
+					"html",
+					"java",
+					"javascript",
+					"json",
+					"kotlin",
+					"lua",
+					"nix",
+					"ocaml",
+					"ocaml_interface",
+					"prisma",
+					"python",
+					"regex",
+					"rust",
+					"scala",
+					"scss",
+					"sql",
+					"svelte",
+					"toml",
+					"tsx",
+					"typescript",
+					"yaml",
+				},
+			},
+		},
 		-- Colorschemes
-		{ "catppuccin/nvim", name = "catppuccin" },
+		{ "catppuccin/nvim",          name = "catppuccin" },
 		{ "sainnhe/everforest" },
 		{ "EdenEast/nightfox.nvim" },
 		{ "Mofiqul/vscode.nvim" },
@@ -32,7 +64,7 @@ return {
 				-- modify the sources part of the options table
 				opts.sources = cmp.config.sources({
 					{ name = "nvim_lsp", priority = 1000 },
-					{ name = "luasnip", priority = 750 },
+					{ name = "luasnip",  priority = 750 },
 					{
 						name = "buffer",
 						priority = 500,
@@ -60,6 +92,7 @@ return {
 				return opts
 			end,
 		},
+		-- end plugins
 	},
 	mappings = {
 		n = {
@@ -76,6 +109,7 @@ return {
 				desc = "Previous buffer",
 			},
 		},
+		-- end mappings
 	},
 	colorscheme = "catppuccin",
 }
