@@ -1,4 +1,9 @@
 return {
+	options = {
+		g = {
+			python3_host_prog = "/usr/bin/python3",
+		},
+	},
 	plugins = {
 		{
 			"nvim-treesitter/nvim-treesitter",
