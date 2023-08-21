@@ -7,6 +7,9 @@ alias cm='chezmoi'
 alias l='ls'
 alias la='ls -a'
 
+alias ccb='xclip -sel c'
+alias pcb='xclip -o -sel c'
+
 alias scmd='save_last_command'
 
 save_last_command() {
