@@ -2,4 +2,28 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ds='dotfiles status'
 alias dl='cd ~/Downloads'
 alias cat='bat'
+alias c='bat'
+alias cm='chezmoi'
+alias l='ls'
+alias la='ls -a'
+
+alias scmd='save_last_command'
+
+save_last_command() {
+    if [ $# -lt 1 ]; then
+        echo "Usage: savecmd <description> <output_file>"
+        return 1
+    fi
+
+    description="$1"
+    output_file="${2:-$HOME/commandos.txt}"
+    last_command="$(fc -ln -1)"
+
+    echo "# Description: $description" >> $output_file
+    echo "$last_command" >> "$output_file"
+    echo "" >> "$output_file"
+
+    echo "Command saved to $output_file"
+}
+
 source ~/.alias_local
