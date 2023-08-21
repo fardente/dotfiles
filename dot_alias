@@ -23,10 +23,11 @@ save_last_command() {
     last_command="$(fc -ln -1)"
 
     echo "# Description: $description" >> $output_file
-    echo "$last_command" >> "$output_file"
-    echo "" >> "$output_file"
+    printf "$last_command\n\n" >> "$output_file"
 
-    echo "Command saved to $output_file"
+    echo "Command $last_command saved to $output_file"
 }
+
+cheat() { curl -s "http://cheat.sh/$1"; }
 
 source ~/.alias_local
