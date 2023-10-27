@@ -120,3 +120,6 @@ hints:
       binding:
         key: U
         mods: Control|Shift
+
+key_bindings:
+  - { key: 5, mods: Shift, mode: Vi, action: Last }
