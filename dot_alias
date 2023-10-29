@@ -29,6 +29,10 @@ save_last_command() {
     echo "Command $last_command saved to $output_file"
 }
 
+remind() {
+  echo "notify-send '$1'" | at $2 
+}
+
 cheat() { curl -s "http://cheat.sh/$1"; }
 
 source ~/.alias_local
