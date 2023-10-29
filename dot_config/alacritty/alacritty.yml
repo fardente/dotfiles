@@ -18,6 +18,12 @@ scrolling:
   history: 10000
   multiplier: 4
 
+cursor:
+  style:
+    blinking: Always
+  blink_interval: 500
+  blink_timeout: 0
+
 font:
   normal:
     family: Droid Sans Mono
