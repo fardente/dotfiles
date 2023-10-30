@@ -38,7 +38,7 @@ return {
 			},
 		},
 		-- Colorschemes
-		{ "catppuccin/nvim",          name = "catppuccin" },
+		{ "catppuccin/nvim", name = "catppuccin" },
 		{ "sainnhe/everforest" },
 		{ "EdenEast/nightfox.nvim" },
 		{ "Mofiqul/vscode.nvim" },
@@ -69,7 +69,7 @@ return {
 				-- modify the sources part of the options table
 				opts.sources = cmp.config.sources({
 					{ name = "nvim_lsp", priority = 1000 },
-					{ name = "luasnip",  priority = 750 },
+					{ name = "luasnip", priority = 750 },
 					{
 						name = "buffer",
 						priority = 500,
