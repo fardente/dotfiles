@@ -59,16 +59,18 @@ RPROMPT=\$vcs_info_msg_0_
 # PROMPT=\$vcs_info_msg_0_'%# '
 zstyle ':vcs_info:git:*' formats '%b'
 
-# run command line as user root via sudo:
-function sudo-command-line () {
-    # [[ -z $BUFFER ]] && zle up-history
-    if [[ $BUFFER != sudo\ * ]]; then
-        BUFFER="sudo $BUFFER"
-        CURSOR=$(( CURSOR+5 ))
-    fi
+# add sudo before command
+function prepend-sudo() {
+  [[ -z $BUFFER ]] && zle up-history
+  if [[ $BUFFER == sudo\ * ]]; then
+    LBUFFER="${LBUFFER#sudo }"
+  else
+    LBUFFER="sudo $LBUFFER"
+  fi
 }
-zle -N sudo-command-line
-bindkey "^xk" sudo-command-line
+zle -N prepend-sudo
+# defined shortcut keys: [Esc] [Esc]
+bindkey "\e\e" prepend-sudo
 
 source ~/.alias
 
