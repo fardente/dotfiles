@@ -129,3 +129,5 @@ hints:
 
 key_bindings:
   - { key: 5, mods: Shift, mode: Vi, action: Last }
+# alternatively import theme from file:
+#   - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
