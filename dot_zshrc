@@ -59,6 +59,11 @@ RPROMPT=\$vcs_info_msg_0_
 # PROMPT=\$vcs_info_msg_0_'%# '
 zstyle ':vcs_info:git:*' formats '%b'
 
+# CTRL+x CTRL+e to edit current buffer in editor
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # add sudo before command
 function prepend-sudo() {
   [[ -z $BUFFER ]] && zle up-history
