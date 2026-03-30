@@ -9,7 +9,6 @@ Requirements for terminal stuff:
 - [ripgrep](https://github.com/BurntSushi/ripgrep) rg - instant grepping
 - [alacritty](https://github.com/alacritty/alacritty) RGB Terminal
 - [tmux](https://github.com/tmux/tmux/wiki) terminal multiplexer
-- [astronvim](https://astronvim.github.io/) for use with user/init.lua
 - [bat](https://github.com/sharkdp/bat) A cat clone with syntax highlighting and Git integration
 ---
 Other stuff:
