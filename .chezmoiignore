@@ -1,2 +1,7 @@
 README.md
 .config/nvim/.git/
+
+{{- if eq (.profile | default "personal") "work" }}
+.cmc.py
+.config/conky
+{{- end }}
