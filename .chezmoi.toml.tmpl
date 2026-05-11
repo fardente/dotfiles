@@ -1,4 +1,6 @@
-{{- $profile := promptChoiceOnce . "profile" "Which profile is this machine?" (list "personal" "work") -}}
+{{- $choices := list "personal" "work" -}}
+{{- $profile := promptChoice "What type of host are you on" $choices -}}
 
 [data]
-    profile = {{ $profile | quote }}
+    profile = {{- $profile | quote -}}
+
