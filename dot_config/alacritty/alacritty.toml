@@ -47,7 +47,7 @@ blinking = "Always"
 size = 12
 
 [font.bold]
-family = "Droid Sans Mono"
+family = "Hack Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
@@ -55,11 +55,11 @@ family = "Hack Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Droid Sans Mono"
+family = "Hack Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "Droid Sans Mono"
+family = "Hack Nerd Font Mono"
 style = "Regular"
 
 [hints]
