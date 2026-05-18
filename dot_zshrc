@@ -7,16 +7,18 @@ fi
 
 # Use powerline
 USE_POWERLINE="true"
-# Source manjaro-zsh-configuration
+# Source manjaro-zsh-configuration (Manjaro path — kept for portability, no-op on Fedora)
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
-# Use manjaro zsh prompt
-#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-#  source /usr/share/zsh/manjaro-zsh-prompt
-#fi
 
-[[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh-autosuggestions (try Fedora path first, then Manjaro)
+for f in /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
+         /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh; do
+  [[ -f $f ]] && source $f && break
+done
+
+# zsh-syntax-highlighting (must be sourced near the end; see below)
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -90,3 +92,9 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/.zshrc_local
+
+# zsh-syntax-highlighting — must be the last plugin sourced
+for f in /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+         /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; do
+  [[ -f $f ]] && source $f && break
+done
