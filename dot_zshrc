@@ -16,7 +16,7 @@ fi
 #  source /usr/share/zsh/manjaro-zsh-prompt
 #fi
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
