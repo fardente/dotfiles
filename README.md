@@ -7,12 +7,6 @@ Managed using [chezmoi](https://www.chezmoi.io/)
 chezmoi init --apply <repo-url>
 ```
 
-On first run you'll be prompted for a profile:
-- `personal` — applies everything
-- `work` — excludes the personal-only files listed below
-
-The choice is stored in `~/.config/chezmoi/chezmoi.toml` and won't be re-prompted on subsequent `chezmoi apply` runs. To switch later, edit that file and re-apply.
-
 ## Requirements for terminal stuff
 - [zsh](https://wiki.archlinux.org/title/zsh)
 - [powerlevel10](https://github.com/romkatv/powerlevel10k) (zsh prompt theme)
@@ -23,9 +17,8 @@ The choice is stored in `~/.config/chezmoi/chezmoi.toml` and won't be re-prompte
 - [tmux](https://github.com/tmux/tmux/wiki) terminal multiplexer
 - [bat](https://github.com/sharkdp/bat) A cat clone with syntax highlighting and Git integration
 
-## Personal-only (excluded on `work` profile)
-- [conky](https://github.com/brndnmtthws/conky) customisable system monitor — `.config/conky/`
-- `.cmc.py` needs API key for coinmarketcap, can be run as cron job to fetch BTC price to be shown in conky \
-  e.g. fetch BTC price every 5 mins using `crontab -e`:
+## Optional extras
+- [conky](https://github.com/brndnmtthws/conky) customisable system monitor — `.config/conky/` is shipped but conky won't run until you start it.
+- `.cmc.py` needs an API key for coinmarketcap; runs as a cron job to fetch BTC price for conky. The file is shipped but inert until wired up:
 
   `*/5 * * * * /usr/bin/python /home/username/.cmc.py`
