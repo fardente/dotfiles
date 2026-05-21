@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/distrobox"
+
+for manifest in dev.ini aur.ini; do
+  path="$CONFIG_DIR/$manifest"
+  if [[ ! -f "$path" ]]; then
+    echo "Skipping $manifest (not found at $path)"
+    continue
+  fi
+  echo ">> Assembling $manifest"
+  distrobox-assemble create --file "$path"
+done
+
+# Bootstrap yay in the aur box if present and not yet installed.
+# Done here (not via aur.ini init_hooks) because makepkg refuses to run as root,
+# whereas `distrobox enter -- ...` runs as the regular user.
+if distrobox list 2>/dev/null | grep -qw aur; then
+  if ! distrobox enter aur -- command -v yay >/dev/null 2>&1; then
+    echo ">> Bootstrapping yay in aur box"
+    distrobox enter aur -- bash -c '
+      set -e
+      tmp="$(mktemp -d)"
+      cd "$tmp"
+      git clone https://aur.archlinux.org/yay.git
+      cd yay
+      makepkg -si --noconfirm
+      cd /
+      rm -rf "$tmp"
+    '
+  fi
+fi
+
+echo
+echo "Done. Enter a box with: distrobox enter <dev|aur>"
